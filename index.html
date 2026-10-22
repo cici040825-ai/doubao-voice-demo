@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#ffffff"><title>轻轻聊 · AI 通话</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<main class="studio">
+  <section class="phone" aria-label="AI 通话演示" data-state="listening" data-mode="voice">
+    <div class="status-bar"><span>9:41</span><span class="device-status" aria-label="网络与电量">▮▮▮ <span>⌁</span> ▰</span></div>
+    <header><button class="icon-button back" data-action="voice" aria-label="返回语音通话"></button><div><h1 id="mode-title">语音通话</h1><span id="call-time">00:00</span></div><span class="privacy" aria-hidden="true"></span></header>
+    <div class="scene" id="scene" hidden>
+      <div class="scene-top"><span><i></i>模拟镜头</span><span id="scene-caption">午后 · 茶饮小店</span></div>
+      <div class="tea-scene" id="tea-scene"><div class="shelf-label">A LITTLE TEA, A LITTLE JOY</div><div class="products">
+        <button class="product earl" data-tea="伯爵茶" aria-label="识别伯爵茶"><span class="target-label">推荐：伯爵茶</span><span class="can"><span class="can-brand">TEA<br>ATELIER</span><span class="tea-leaf">❧</span><b>EARL GREY</b><small>伯爵茶</small></span></button>
+        <button class="product black" data-tea="红茶" aria-label="识别红茶"><span class="target-label">推荐：红茶</span><span class="can"><span class="can-brand">TEA<br>ATELIER</span><span class="tea-leaf">❧</span><b>BLACK TEA</b><small>红茶</small></span></button>
+        <button class="product lemon" data-tea="柠檬茶" aria-label="识别柠檬茶"><span class="target-label">推荐：柠檬茶</span><span class="can"><span class="can-brand">TEA<br>ATELIER</span><span class="tea-leaf">◒</span><b>LEMON TEA</b><small>柠檬茶</small></span></button>
+      </div><div class="counter"></div><span class="scene-hint">轻触商品，让我帮你看看</span></div>
+      <div class="nav-scene" id="nav-scene" hidden><div class="ceiling"></div><div class="doors"><div class="door target"><span class="door-sign">出口 A</span><span class="door-glass"></span></div><div class="door"><span class="door-sign">通道 B</span><span class="door-glass"></span></div><div class="door"><span class="door-sign">通道 C</span><span class="door-glass"></span></div></div><div class="nav-arrow" aria-label="向左侧门前进">↖</div><div class="nav-guide">从左侧门出去</div><div class="uncertain-guide" hidden><span>?</span><b>需要更多视觉信息</b><small>请把镜头转向门牌或路标</small></div></div>
+      <div class="camera-off" hidden>摄像头已关闭<span>仍可继续语音交流</span></div>
+    </div>
+    <section class="conversation" aria-label="通话状态">
+      <div class="context" id="context" aria-live="polite"></div>
+      <div class="orb-stage" aria-hidden="true"><div class="orb-halo"></div><div class="orb"><span></span><span></span><span></span><span></span></div><div class="sound-bars"><i></i><i></i><i></i><i></i><i></i></div></div>
+      <div class="state-copy" role="status"><h2 id="state-title">我在听</h2><p id="state-detail">慢慢说，我在这里</p></div>
+      <p class="subtitle" id="subtitle" aria-live="polite"></p>
+      <button class="resume-topic" data-action="topic" hidden>继续刚才的话题 <span>↗</span></button>
+    </section>
+    <div class="walking-label" hidden><span>↟</span> 边走边聊 · 不用一直看屏幕</div>
+    <div class="ended-panel" hidden><div class="ended-icon">♡</div><h2>下次接着聊</h2><p>这段对话，先留在这里</p><button data-action="restart">重新通话</button></div>
+    <footer><div class="toolbar">
+      <div class="tool-wrap speaker-tool"><button class="tool" data-action="speaker" aria-label="关闭扬声器" aria-pressed="true"></button><span>扬声器</span></div>
+      <div class="tool-wrap"><button class="tool" data-action="mic" aria-label="关闭麦克风" aria-pressed="true"></button><span>麦克风</span></div>
+      <div class="tool-wrap camera-tool" hidden><button class="tool" data-action="camera" aria-label="关闭摄像头" aria-pressed="true"></button><span>摄像头</span></div>
+      <div class="tool-wrap"><button class="tool end" data-action="end" aria-label="结束通话"></button><span>挂断</span></div>
+      <div class="tool-wrap"><button class="tool" data-action="more" aria-label="更多操作" aria-expanded="false"></button><span>更多</span></div>
+    </div><div class="home-indicator"></div></footer>
+    <div class="sheet-backdrop" hidden></div><section class="more-sheet" aria-label="更多操作" hidden><div class="sheet-handle"></div><h3>按你的节奏聊</h3><button data-action="pause">暂停 / 继续<span>给自己一点时间</span></button><button data-action="walking">走路模式<span>少看屏幕，安心交流</span></button><button data-action="video">视频通话<span>一起看看眼前的事物</span></button><button data-action="navigation">实景导航<span>明确方向，也坦诚不确定</span></button><button data-action="voice">语音通话<span>回到声音里</span></button></section>
+  </section>
+  <aside class="demo-panel"><div class="panel-eyebrow">INTERACTION LAB / 01</div><h2>让对话，<br>自然发生。</h2><p class="panel-intro">轻轻聊 · AI 通话交互原型</p><div class="panel-rule"></div><div class="panel-heading">Demo Controls <span>仅用于演示</span></div><div class="demo-grid">
+    <button data-demo="listening"><span>01</span>Listening</button><button data-demo="understanding"><span>02</span>Understanding</button><button data-demo="speaking"><span>03</span>Speaking</button><button data-demo="interrupt"><span>04</span>Interrupt</button><button data-demo="pause"><span>05</span>Pause</button><button data-demo="resume"><span>06</span>Resume</button><button data-demo="walking"><span>07</span>Walking</button><button data-demo="video"><span>08</span>Video</button><button data-demo="navigation"><span>09</span>Navigation</button>
+  </div><div class="scenario-controls"><button data-demo="user-talk">模拟用户说话</button><button data-demo="silence">自然停顿 3 秒</button><button data-demo="finish">说完了</button><button data-demo="uncertain">无法确认方向</button></div><p class="panel-note">试试在回答时插话，或暂停后继续。<br>视频中的茶罐可直接点击识别。</p><div class="panel-bottom"><span class="live-dot"></span> 本地交互模拟 <span>不调用麦克风 / AI 服务</span></div></aside>
+</main><script src="app.js"></script>
+</body></html>
